@@ -1,0 +1,106 @@
+---
+const steps = [
+  {
+    number: "01",
+    title: "Book a call",
+    description: "Tell us what's slowing you down. We ask the right questions and figure out if we're a good fit.",
+  },
+  {
+    number: "02",
+    title: "Diagnose your workflow",
+    description: "We map where time is being lost and find the highest-impact places to start.",
+  },
+  {
+    number: "03",
+    title: "Build and implement",
+    description: "We set it up, train your team, and stay involved until it's running the way it should.",
+  },
+];
+---
+
+<section class="hiw" id="how-it-works">
+  <div class="hiw-inner">
+    <h2>How it works.</h2>
+    <div class="steps">
+      {steps.map((s) => (
+        <div class="step">
+          <span class="number">{s.number}</span>
+          <h3>{s.title}</h3>
+          <p>{s.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .hiw {
+    padding: 5rem 0;
+    background: #F5F5F3;
+  }
+
+  .hiw-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: #1C1C1E;
+    letter-spacing: -0.02em;
+    margin: 0 0 2.5rem;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+  }
+
+  @media (max-width: 768px) {
+    .steps {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+
+  .step {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .number {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #FF6B35;
+    color: #fff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1C1C1E;
+    margin: 0;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+  }
+
+  p {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: #666;
+    margin: 0;
+  }
+</style>

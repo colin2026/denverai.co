@@ -1,0 +1,232 @@
+---
+---
+
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-text">
+      <h2>Tell us where you need help.</h2>
+      <p class="body">Share what is slowing you down. We'll show you exactly where AI fits and what it would change.</p>
+
+    </div>
+
+    <form class="contact-form" id="contact-form">
+      <!-- Honeypot -->
+      <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;pointer-events:none;" />
+      <input type="hidden" name="form_started_at" value="" />
+
+      <div class="field-row">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="jane@company.com" required />
+        </div>
+      </div>
+      <div class="field">
+        <label for="company">Business</label>
+        <input type="text" id="company" name="company" placeholder="Your business name" />
+      </div>
+      <div class="field">
+        <label for="message">What are you working on?</label>
+        <textarea id="message" name="message" rows="4" placeholder="Tell us a bit about your business and what you're curious about..."></textarea>
+      </div>
+      <div class="form-status" id="form-status" style="display:none;"></div>
+      <button type="submit" class="btn-submit" id="submit-btn">Book a call</button>
+    </form>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const statusEl = document.getElementById('form-status') as HTMLElement;
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const startedAtInput = form?.querySelector<HTMLInputElement>('input[name="form_started_at"]');
+
+  if (startedAtInput) startedAtInput.value = String(Date.now());
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (submitBtn.disabled) return;
+
+    const formData = new FormData(form);
+    const name = formData.get('name') as string;
+    const email = formData.get('email') as string;
+    const company = formData.get('company') as string;
+    const message = formData.get('message') as string;
+    const honeypot = (formData.get('website') as string)?.trim();
+    const startedAt = Number(formData.get('form_started_at') || 0);
+    const elapsed = startedAt ? Date.now() - startedAt : 0;
+
+    if (honeypot || (elapsed > 0 && elapsed < 1200)) {
+      showStatus('success', "Got it. We'll be in touch shortly.");
+      form.reset();
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    statusEl.style.display = 'none';
+
+    try {
+      const body = [
+        `Name: ${name}`,
+        `Email: ${email}`,
+        company ? `Business: ${company}` : null,
+        message ? `Message: ${message}` : null,
+      ].filter(Boolean).join('\n');
+
+      const res = await fetch('https://ntfy.sh/aidenver-contact', {
+        method: 'POST',
+        headers: { 'Title': 'New Denver AI Lead' },
+        body,
+      });
+
+      if (!res.ok) throw new Error();
+
+      showStatus('success', "Got it. We'll be in touch shortly.");
+      form.reset();
+      submitBtn.textContent = 'Sent';
+    } catch {
+      showStatus('error', 'Something went wrong. Try again or email us directly.');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Book a call';
+    }
+  });
+
+  function showStatus(type: 'success' | 'error', text: string) {
+    statusEl.className = `form-status ${type}`;
+    statusEl.textContent = text;
+    statusEl.style.display = 'block';
+  }
+</script>
+
+<style>
+  .contact {
+    padding: 7rem 2rem;
+    background: #1C1C1E;
+  }
+
+  .contact-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    margin: 0 0 1.25rem;
+  }
+
+  .body {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #888;
+    margin: 0 0 2.5rem;
+  }
+
+
+  /* Form */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+
+  .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.1rem;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  input, textarea {
+    padding: 0.75rem 1rem;
+    border: 1.5px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem;
+    color: #fff;
+    background: rgba(255,255,255,0.05);
+    transition: border-color 0.2s;
+    resize: vertical;
+    outline: none;
+  }
+
+  input::placeholder, textarea::placeholder {
+    color: #444;
+  }
+
+  input:focus, textarea:focus {
+    border-color: #FF6B35;
+  }
+
+  .btn-submit {
+    background: #FF6B35;
+    color: #fff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    align-self: flex-start;
+  }
+
+  .btn-submit:hover {
+    background: #e85a25;
+    transform: translateY(-2px);
+  }
+
+  .form-status {
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+  }
+
+  .form-status.success {
+    background: rgba(74, 222, 128, 0.1);
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    color: #4ADE80;
+  }
+
+  .form-status.error {
+    background: rgba(255, 107, 107, 0.1);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    color: #ff6b6b;
+  }
+
+  @media (max-width: 768px) {
+    .contact-inner {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .field-row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

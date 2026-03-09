@@ -1,0 +1,118 @@
+---
+const types = [
+  "Contractors & trades",
+  "Medical & dental offices",
+  "Real estate teams",
+  "Restaurants & hospitality",
+  "Professional services",
+  "Retail & ecommerce",
+  "Nonprofits",
+  "Any Colorado business figuring out AI",
+];
+---
+
+<section class="who" id="who-its-for">
+  <div class="who-inner">
+    <div class="who-text">
+      <p class="overline">Who it's for</p>
+      <h2>Any Colorado business that's ready to move on AI.</h2>
+      <p class="body">We work across every industry. If you're ready to get AI working in your business and want someone who knows how to build it right - that's exactly where we start.</p>
+      <a href="#contact" class="btn-primary">Start the conversation</a>
+    </div>
+
+    <div class="who-tags">
+      {types.map((t) => (
+        <div class="tag">{t}</div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .who {
+    padding: 6rem 2rem;
+    background: #1C1C1E;
+  }
+
+  .who-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .overline {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #FF6B35;
+    margin-bottom: 0.75rem;
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    margin-bottom: 1.25rem;
+  }
+
+  .body {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #aaa;
+    margin-bottom: 2rem;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: #FF6B35;
+    color: #fff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.85rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover {
+    background: #e85a25;
+    transform: translateY(-2px);
+  }
+
+  .who-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .tag {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: #ddd;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.6rem 1.1rem;
+    border-radius: 50px;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+    cursor: default;
+  }
+
+  .tag:hover {
+    background: rgba(255,107,53,0.15);
+    border-color: rgba(255,107,53,0.4);
+    color: #FF6B35;
+  }
+
+  @media (max-width: 768px) {
+    .who-inner {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+</style>

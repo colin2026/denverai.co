@@ -1,0 +1,154 @@
+---
+---
+
+<section class="hero">
+  <!-- Decorative blobs -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <div class="hero-inner">
+    <div class="badge">Denver, Colorado</div>
+    <h1>
+      Denver Business AI,<br />
+      <span class="highlight">done right.</span>
+    </h1>
+    <p class="subline">
+      We help Denver businesses save time, reply faster,
+      and win more business.
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Book a free call</a>
+      <a href="#services" class="btn-ghost">See what we do</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    padding-top: 8rem;
+    padding-bottom: 0;
+  }
+
+  .blob {
+    position: absolute;
+    border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
+    opacity: 0.12;
+    z-index: 0;
+  }
+
+  .blob-1 {
+    width: 500px;
+    height: 500px;
+    background: #FF6B35;
+    top: -100px;
+    right: -150px;
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .blob-2 {
+    width: 300px;
+    height: 300px;
+    background: #FFD60A;
+    bottom: 50px;
+    left: -80px;
+    animation: float 10s ease-in-out infinite reverse;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(20px, -20px) rotate(5deg); }
+    66% { transform: translate(-10px, 15px) rotate(-3deg); }
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: #FFF3EE;
+    color: #FF6B35;
+    border: 1px solid #FFD4C2;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.35rem 0.85rem;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: #1C1C1E;
+    margin: 0 0 1.5rem;
+  }
+
+  .highlight {
+    color: #FF6B35;
+  }
+
+  .subline {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.65;
+    color: #555;
+    max-width: 520px;
+    margin: 0 0 2.5rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: #FF6B35;
+    color: #fff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.85rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover {
+    background: #e85a25;
+    transform: translateY(-2px);
+  }
+
+  .btn-ghost {
+    display: inline-block;
+    border: 2px solid #1C1C1E;
+    background: #ffffff;
+    color: #1C1C1E;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.85rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s, transform 0.15s;
+  }
+
+  .btn-ghost:hover {
+    border-color: #1C1C1E;
+    transform: translateY(-2px);
+  }
+
+</style>

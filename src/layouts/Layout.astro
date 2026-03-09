@@ -1,0 +1,154 @@
+---
+import '../styles/global.css';
+import Analytics from '@vercel/analytics/astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Denver AI Consulting - AI Implementation for Local Businesses',
+  description = 'Denver AI consulting for small and mid-sized businesses. We implement AI that cuts admin work, automates follow-up, and keeps your team ahead.',
+} = Astro.props;
+
+const siteUrl = 'https://denverai.co';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need to be tech-savvy to use AI in my business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. We handle the setup, the tools, and the configuration. You just need to know your business — we'll figure out the rest."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this just ChatGPT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. ChatGPT is a tool. We build workflows and automations specific to how your business actually operates — connected to your existing software, your team, and your process."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to see results?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most businesses see time savings within the first few weeks. We focus on the highest-impact areas first so you're not waiting months for value."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to replace my current software?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. We build around what you already use. The goal is to make your existing process faster and less manual, not to start over."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is AI consulting for small businesses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI consulting for small businesses involves mapping your existing workflows, finding where manual work can be automated, and implementing tools your team actually uses. Denver AI handles setup, training, and ongoing support so you don't have to figure it out alone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What kinds of businesses do you work with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Denver-area small and mid-sized businesses — contractors, medical and dental practices, real estate, professional services, and more. If you have a team and repeatable processes, AI can help."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does it cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on what you need. We figure that out on the first call — no vague pricing, no surprises."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I start using AI in my business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start with a free call. We map your current workflow, find the highest-impact areas to automate, and show you exactly what AI would change. No technical setup required on your end before the call."
+      }
+    }
+  ]
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Denver AI",
+  "description": "AI implementation and enablement for Denver-area small and mid-sized businesses.",
+  "url": siteUrl,
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Denver",
+      "sameAs": "https://en.wikipedia.org/wiki/Denver"
+    },
+    {
+      "@type": "State",
+      "name": "Colorado"
+    }
+  ],
+  "serviceType": ["AI Implementation", "AI Enablement", "Business Automation", "Workflow Automation"],
+  "knowsAbout": ["Artificial Intelligence", "Business Automation", "Workflow Optimization", "AI Training"],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Denver",
+    "addressRegion": "CO",
+    "addressCountry": "US"
+  }
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={siteUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${siteUrl}/og-image.svg`} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Denver AI" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl}/og-image.svg`} />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+    <meta name="msvalidate.01" content="6380E1DCD8243AFE202CB120DDEAF488" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body>
+    <slot />
+    <Analytics />
+  </body>
+</html>

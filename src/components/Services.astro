@@ -1,0 +1,159 @@
+---
+const services = [
+  {
+    label: "Implementation",
+    title: "Set up AI for your business",
+    intro: "We map your business, find the friction, and build around what's already working.",
+    bullets: [
+      "Find where time is being wasted every week",
+      "Prioritize the fixes that will have the most immediate impact",
+      "Build the automations and tools around your current process",
+      "Launch it in your business, not as a side project",
+    ],
+    color: "#FF6B35",
+  },
+  {
+    label: "Enablement",
+    title: "Train your team",
+    intro: "A system only works if your team is confident using it.",
+    bullets: [
+      "Train your team on the tasks they do every day",
+      "Give clear steps for what to do and when",
+      "Fix what is not working and keep improving it",
+      "Stay involved until it feels normal",
+      "Keep updating it as your business changes",
+    ],
+    color: "#FF4D6D",
+  },
+];
+---
+
+<section class="services" id="services">
+  <div class="services-inner">
+    <h2 class="services-heading">AI services for Denver businesses</h2>
+    <div class="services-grid">
+      {services.map((s) => (
+        <div class="service-card" style={`border-top: 4px solid ${s.color};`}>
+          <div class="service-accent" style={`background: ${s.color};`}></div>
+          <span class="label" style={`color: ${s.color};`}>{s.label}</span>
+          <h3>{s.title}</h3>
+          <p class="intro">{s.intro}</p>
+          <ul>
+            {s.bullets.map((b) => (
+              <li>{b}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .services {
+    padding: 2rem 0 5rem;
+    background: #FAE3D5;
+  }
+
+  .services-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .services-heading {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    font-weight: 700;
+    color: #1C1C1E;
+    letter-spacing: -0.02em;
+    margin: 0 0 2rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .service-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.09);
+  }
+
+  .service-accent {
+    width: 32px;
+    height: 4px;
+    border-radius: 2px;
+    margin-bottom: 1.25rem;
+    opacity: 0.85;
+  }
+
+  .label {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1C1C1E;
+    margin: 0 0 0.5rem;
+  }
+
+  .intro {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #444;
+    margin: 0 0 1rem;
+    font-weight: 500;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  li {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #666;
+    padding-left: 1.1rem;
+    position: relative;
+  }
+
+  li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #E8E8E5;
+  }
+</style>

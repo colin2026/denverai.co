@@ -1,0 +1,35 @@
+# Denver AI
+
+> AI implementation and enablement for Denver-area small and mid-sized businesses.
+
+Denver AI helps local businesses in Denver, Colorado set up and adopt AI systems that reduce admin work, automate follow-up, and handle more volume without adding staff. We focus on practical, working AI — not demos or buzzwords.
+
+## Services
+
+- **AI Implementation**: We map your business, find the friction, and build AI automations around your existing process. No need to replace your current software or hire a tech team.
+- **AI Enablement**: We train your team on the AI tools we build so adoption actually happens. We stay involved until it feels normal.
+
+## What We Automate
+
+- Admin work: invoices, quotes, scheduling, paperwork
+- Follow-through: follow-up texts and emails, reminders, job status updates
+- Customer responsiveness: lead replies, client updates, after-hours coverage
+- Lead capture: instant responses to new inquiries, nothing falling through the cracks
+
+## How It Works
+
+1. Book a call — tell us what's slowing you down
+2. Diagnose your workflow — we find the highest-impact places to start
+3. Build and implement — we set it up, train your team, and stay involved
+
+## Who We Serve
+
+Denver-area small and mid-sized businesses including contractors, medical and dental practices, real estate agents, and professional services firms.
+
+## Location
+
+Denver, Colorado, USA
+
+## Contact
+
+denverai.co

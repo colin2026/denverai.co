@@ -1,53 +1,53 @@
 ---
-const industries = [
+const outcomes = [
   {
-    name: "Contractors",
+    title: "Streamline admin work",
+    bullets: [
+      "Invoices and quotes sent automatically",
+      "Scheduling handled without back-and-forth",
+      "Less time on paperwork, more time on the job",
+    ],
     color: "#FF6B35",
-    darkText: false,
-    bullets: [
-      "Estimates drafted automatically after site visits",
-      "Follow-up sequences for leads who didn't book",
-      "Job status updates sent to clients without manual texting",
-    ],
   },
   {
-    name: "Dental & Medical",
+    title: "Automate follow-through",
+    bullets: [
+      "Follow-up texts and emails sent automatically",
+      "Reminders go out without you remembering to send them",
+      "Jobs keep moving without constant chasing",
+    ],
     color: "#FF4D6D",
-    darkText: false,
-    bullets: [
-      "Appointment reminders and confirmations run automatically",
-      "Insurance pre-auth requests drafted by AI for staff review",
-      "Post-visit follow-up messages without lifting a finger",
-    ],
   },
   {
-    name: "Real Estate",
-    color: "#FFD60A",
-    darkText: true,
+    title: "Stay responsive",
     bullets: [
-      "New listing descriptions written in minutes",
-      "Lead follow-up sequences triggered the moment someone inquires",
-      "Client update emails drafted and staged for agent review",
+      "New leads get a reply before they move on",
+      "Customers get clear updates without you writing them",
+      "Handle more volume without adding staff",
     ],
+    color: "#FFD60A",
+  },
+  {
+    title: "Capture every lead",
+    bullets: [
+      "Respond to leads even when you're on a job",
+      "First to reply usually wins the job",
+      "Nothing falls through after hours",
+    ],
+    color: "#4ADE80",
   },
 ];
 ---
 
-<section class="workflows">
-  <div class="workflows-inner">
-    <p class="overline">IN PRACTICE</p>
-    <h2>What this looks like for your business.</h2>
-    <div class="workflows-grid">
-      {industries.map((ind) => (
-        <div class="workflow-card" style={`border-top: 4px solid ${ind.color};`}>
-          <span
-            class="badge"
-            style={`background: ${ind.color}; color: ${ind.darkText ? '#1C1C1E' : '#fff'};`}
-          >
-            {ind.name}
-          </span>
+<section class="outcomes">
+  <div class="outcomes-inner">
+    <h2>What we do with AI.</h2>
+    <div class="outcomes-grid">
+      {outcomes.map((o) => (
+        <div class="outcome-card" style={`border-left: 4px solid ${o.color};`}>
+          <h3>{o.title}</h3>
           <ul>
-            {ind.bullets.map((b) => (
+            {o.bullets.map((b) => (
               <li>{b}</li>
             ))}
           </ul>
@@ -58,66 +58,60 @@ const industries = [
 </section>
 
 <style>
-  .workflows {
-    padding: 5rem 2rem;
+  .outcomes {
+    padding: 5rem 0;
     background: #ffffff;
   }
 
-  .workflows-inner {
+  .outcomes-inner {
     max-width: 1100px;
     margin: 0 auto;
+    padding: 0 2rem;
   }
 
   .overline {
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.12em;
     color: #999;
     text-transform: uppercase;
-    margin: 0 0 0.75rem;
+    margin: 0 0 0.5rem;
   }
 
   h2 {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
     font-weight: 700;
     color: #1C1C1E;
-    margin: 0 0 2.5rem;
+    letter-spacing: -0.02em;
+    margin: 0 0 3rem;
   }
 
-  .workflows-grid {
+  .outcomes-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
   }
 
-  @media (max-width: 900px) {
-    .workflows-grid {
+  @media (max-width: 640px) {
+    .outcomes-grid {
       grid-template-columns: 1fr;
     }
   }
 
-  .workflow-card {
-    background: #ffffff;
+  .outcome-card {
+    background: #FEF9E0;
     border-radius: 16px;
-    padding: 1.75rem;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-    transition: transform 0.2s, box-shadow 0.2s;
+    padding: 2rem;
   }
 
-  .workflow-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.09);
-  }
-
-  .badge {
-    display: inline-block;
-    font-size: 0.72rem;
+  h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.05rem;
     font-weight: 700;
-    letter-spacing: 0.04em;
-    padding: 0.3rem 0.75rem;
-    border-radius: 100px;
-    margin-bottom: 1.25rem;
+    color: #1C1C1E;
+    margin: 0 0 1rem;
   }
 
   ul {

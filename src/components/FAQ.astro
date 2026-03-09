@@ -1,0 +1,106 @@
+---
+const faqs = [
+  {
+    q: "Do I need to be tech-savvy to use AI in my business?",
+    a: "No. We handle the setup, the tools, and the configuration. You just need to know your business — we'll figure out the rest.",
+  },
+  {
+    q: "Is this just ChatGPT?",
+    a: "No. ChatGPT is a tool. We build workflows and automations that are specific to how your business actually operates — connected to your existing software, your team, and your process.",
+  },
+  {
+    q: "How long does it take to see results?",
+    a: "Most businesses see time savings within the first few weeks. We focus on the highest-impact areas first so you're not waiting months for value.",
+  },
+  {
+    q: "Do I need to replace my current software?",
+    a: "No. We build around what you already use. The goal is to make your existing process faster and less manual, not to start over.",
+  },
+  {
+    q: "How do I know where to start with AI in my business?",
+    a: "That's the first thing we figure out together. We map your workflow, find where the highest impact is, and give you a clear picture before anything gets built.",
+  },
+  {
+    q: "What kinds of businesses do you work with?",
+    a: "Denver-area small and mid-sized businesses — contractors, medical and dental practices, real estate, professional services, and more. If you have a team and repeatable processes, AI can help.",
+  },
+  {
+    q: "How much does it cost?",
+    a: "It depends on what you need. We figure that out on the first call — no vague pricing, no surprises.",
+  },
+  {
+    q: "What makes this different from hiring a freelancer?",
+    a: "We stay involved. Most freelancers build something and leave. We train your team, fix what isn't working, and keep improving it as your business changes.",
+  },
+];
+---
+
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <h2>Common questions.</h2>
+    <div class="faq-grid">
+      {faqs.map((item) => (
+        <div class="faq-item">
+          <p class="question">{item.q}</p>
+          <p class="answer">{item.a}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq {
+    padding: 5rem 0;
+    background: #ffffff;
+  }
+
+  .faq-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: #1C1C1E;
+    letter-spacing: -0.02em;
+    margin: 0 0 2.5rem;
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 4rem;
+  }
+
+  @media (max-width: 768px) {
+    .faq-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+
+  .faq-item {
+    border-top: 1px solid #E8E8E5;
+    padding-top: 1.25rem;
+  }
+
+  .question {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1C1C1E;
+    margin: 0 0 0.5rem;
+    line-height: 1.4;
+  }
+
+  .answer {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: #666;
+    margin: 0;
+  }
+</style>
