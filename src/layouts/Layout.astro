@@ -5,14 +5,17 @@ import Analytics from '@vercel/analytics/astro';
 interface Props {
   title?: string;
   description?: string;
+  canonicalPath?: string;
 }
 
 const {
   title = 'Denver AI Consulting - AI Implementation for Local Businesses',
   description = 'Denver AI consulting for small and mid-sized businesses. We implement AI that cuts admin work, automates follow-up, and keeps your team ahead.',
+  canonicalPath,
 } = Astro.props;
 
 const siteUrl = 'https://denverai.co';
+const canonicalUrl = canonicalPath ? `${siteUrl}${canonicalPath}` : siteUrl;
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -121,11 +124,11 @@ const localBusinessSchema = {
 
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={siteUrl} />
+    <link rel="canonical" href={canonicalUrl} />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={siteUrl} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={`${siteUrl}/og-image.svg`} />

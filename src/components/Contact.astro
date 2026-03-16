@@ -85,9 +85,7 @@
 
       if (!res.ok) throw new Error();
 
-      showStatus('success', "Got it. We'll be in touch shortly.");
-      form.reset();
-      submitBtn.textContent = 'Sent';
+      window.location.href = '/thank-you';
     } catch {
       showStatus('error', 'Something went wrong. Try again or email us directly.');
       submitBtn.disabled = false;

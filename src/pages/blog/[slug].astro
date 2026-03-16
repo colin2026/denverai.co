@@ -1,0 +1,242 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": post.data.title,
+  "description": post.data.description,
+  "datePublished": post.data.date.toISOString(),
+  "author": {
+    "@type": "Organization",
+    "name": "Denver AI",
+    "url": "https://denverai.co"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Denver AI",
+    "url": "https://denverai.co"
+  }
+};
+---
+
+<Layout
+  title={`${post.data.title} | Denver AI`}
+  description={post.data.description}
+  canonicalPath={`/blog/${post.slug}`}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <article class="post">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">Denver AI</a>
+        <span>→</span>
+        <a href="/blog">Blog</a>
+      </nav>
+
+      <header class="post-header">
+        <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+        <h1>{post.data.title}</h1>
+        <p class="post-description">{post.data.description}</p>
+      </header>
+
+      <div class="prose">
+        <Content />
+      </div>
+
+      <div class="post-cta">
+        <p>Ready to put AI to work in your business?</p>
+        <a href="/#contact" class="cta-btn">Book a free call</a>
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .post {
+    padding: 5rem 2rem 5rem;
+    min-height: 100vh;
+    background: #ffffff;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+    font-size: 0.82rem;
+    color: #aaa;
+  }
+
+  .breadcrumb a {
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .breadcrumb a:hover {
+    color: #FF6B35;
+  }
+
+  .post-header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #E8E8E5;
+  }
+
+  .post-header time {
+    display: block;
+    font-size: 0.8rem;
+    color: #aaa;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.04em;
+  }
+
+  .post-header h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #1C1C1E;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin: 0 0 1rem;
+  }
+
+  .post-description {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Prose */
+  .prose {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #1C1C1E;
+  }
+
+  .prose :global(h2) {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #1C1C1E;
+    letter-spacing: -0.02em;
+    margin: 2.5rem 0 0.75rem;
+    line-height: 1.2;
+  }
+
+  .prose :global(h3) {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1C1C1E;
+    margin: 2rem 0 0.5rem;
+  }
+
+  .prose :global(p) {
+    margin: 0 0 1.25rem;
+  }
+
+  .prose :global(ul), .prose :global(ol) {
+    margin: 0 0 1.25rem;
+    padding-left: 1.5rem;
+  }
+
+  .prose :global(ul) { list-style: disc; }
+  .prose :global(ol) { list-style: decimal; }
+
+  .prose :global(li) {
+    margin-bottom: 0.4rem;
+    line-height: 1.7;
+  }
+
+  .prose :global(strong) {
+    font-weight: 700;
+    color: #1C1C1E;
+  }
+
+  .prose :global(hr) {
+    border: none;
+    border-top: 1px solid #E8E8E5;
+    margin: 2.5rem 0;
+  }
+
+  .prose :global(a) {
+    color: #FF6B35;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* CTA */
+  .post-cta {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: #FAE3D5;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .post-cta p {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #1C1C1E;
+    margin: 0;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: #FF6B35;
+    color: #fff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.6rem 1.4rem;
+    border-radius: 50px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+
+  .cta-btn:hover {
+    background: #e85a25;
+  }
+
+  @media (max-width: 600px) {
+    .post-header h1 {
+      font-size: 1.75rem;
+    }
+
+    .post-cta {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
