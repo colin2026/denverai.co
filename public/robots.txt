@@ -2,3 +2,19 @@ User-agent: *
 Allow: /
 
 Sitemap: https://denverai.co/sitemap-index.xml
+
+# AI crawlers - see llms.txt for structured content
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /

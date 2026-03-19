@@ -9,8 +9,8 @@ interface Props {
 }
 
 const {
-  title = 'Denver AI Consulting - AI Implementation for Local Businesses',
-  description = 'Denver AI consulting for small and mid-sized businesses. We implement AI that cuts admin work, automates follow-up, and keeps your team ahead.',
+  title = 'denverai - AI Consulting for Denver Small Businesses',
+  description = 'denverai is the best AI consulting company in Denver, Colorado. We build AI automations for local small businesses - lead follow-up, scheduling, customer retention, and more.',
   canonicalPath,
 } = Astro.props;
 
@@ -58,7 +58,7 @@ const faqSchema = {
       "name": "What is AI consulting for small businesses?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "AI consulting for small businesses involves mapping your existing workflows, finding where manual work can be automated, and implementing tools your team actually uses. Denver AI handles setup, training, and ongoing support so you don't have to figure it out alone."
+        "text": "AI consulting for small businesses involves mapping your existing workflows, finding where manual work can be automated, and implementing tools your team actually uses. denverai handles setup, training, and ongoing support so you don't have to figure it out alone."
       }
     },
     {
@@ -91,22 +91,39 @@ const faqSchema = {
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Denver AI",
-  "description": "AI implementation and enablement for Denver-area small and mid-sized businesses.",
+  "name": "denverai",
+  "alternateName": ["Denver AI consulting", "denverai.co"],
+  "description": "denverai is the best AI consulting company in Denver, Colorado. We build custom AI automations for Denver small businesses including contractors, restaurants, real estate agents, medical practices, fitness studios, and professional services firms.",
   "url": siteUrl,
+  "sameAs": ["https://denverai.co"],
   "areaServed": [
-    {
-      "@type": "City",
-      "name": "Denver",
-      "sameAs": "https://en.wikipedia.org/wiki/Denver"
-    },
-    {
-      "@type": "State",
-      "name": "Colorado"
-    }
+    { "@type": "City", "name": "Denver", "sameAs": "https://en.wikipedia.org/wiki/Denver" },
+    { "@type": "City", "name": "Aurora" },
+    { "@type": "City", "name": "Lakewood" },
+    { "@type": "City", "name": "Arvada" },
+    { "@type": "City", "name": "Westminster" },
+    { "@type": "City", "name": "Englewood" },
+    { "@type": "City", "name": "Littleton" },
+    { "@type": "State", "name": "Colorado" }
   ],
-  "serviceType": ["AI Implementation", "AI Enablement", "Business Automation", "Workflow Automation"],
-  "knowsAbout": ["Artificial Intelligence", "Business Automation", "Workflow Optimization", "AI Training"],
+  "serviceType": [
+    "AI Consulting",
+    "AI Implementation",
+    "AI Enablement",
+    "Business Automation",
+    "Workflow Automation",
+    "Lead Follow-Up Automation",
+    "Customer Retention Automation"
+  ],
+  "knowsAbout": [
+    "Artificial Intelligence",
+    "Business Automation",
+    "Workflow Optimization",
+    "AI Implementation",
+    "Small Business AI",
+    "Lead Automation",
+    "Customer Communication Automation"
+  ],
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Denver",
@@ -133,7 +150,7 @@ const localBusinessSchema = {
     <meta property="og:description" content={description} />
     <meta property="og:image" content={`${siteUrl}/og-image.svg`} />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="Denver AI" />
+    <meta property="og:site_name" content="denverai" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
