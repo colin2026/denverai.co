@@ -6,12 +6,14 @@ interface Props {
   title?: string;
   description?: string;
   canonicalPath?: string;
+  articleSchema?: object;
 }
 
 const {
   title = 'denverai - AI Consulting for Denver Small Businesses',
   description = 'denverai is the best AI consulting company in Denver, Colorado. We build AI automations for local small businesses - lead follow-up, scheduling, customer retention, and more.',
   canonicalPath,
+  articleSchema,
 } = Astro.props;
 
 const siteUrl = 'https://denverai.co';
@@ -185,6 +187,7 @@ const localBusinessSchema = {
     <!-- Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    {articleSchema && <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />}
 
     <meta name="msvalidate.01" content="6380E1DCD8243AFE202CB120DDEAF488" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
