@@ -1,27 +1,38 @@
 ---
 const services = [
   {
+    label: "Consulting",
+    title: "Figure out where to start",
+    intro: "Not sure what AI can do for your business? We map your workflows, find the gaps, and give you a clear picture before anything gets built.",
+    bullets: [
+      "Understand where time and money are being lost",
+      "Find the highest-impact places to start with AI",
+      "Get a clear plan before any commitment to build",
+      "No jargon, no sales pitch - just an honest assessment",
+    ],
+    color: "#FFD60A",
+  },
+  {
     label: "Implementation",
     title: "Set up AI for your business",
-    intro: "We map your business, find the friction, and build around what's already working.",
+    intro: "We build the automations around how your business actually works - connected to your existing tools, your team, your process.",
     bullets: [
-      "Find where time is being wasted every week",
-      "Prioritize the fixes that will have the most immediate impact",
-      "Build the automations and tools around your current process",
+      "Build automations around your current process",
+      "Connect to the tools you already use",
       "Launch it in your business, not as a side project",
+      "Test it, fix it, and make sure it actually runs",
     ],
     color: "#FF6B35",
   },
   {
-    label: "Enablement",
-    title: "Train your team",
-    intro: "A system only works if your team is confident using it.",
+    label: "Training",
+    title: "Get your team using it",
+    intro: "A system only works if your team is confident using it. We stay involved until it feels normal.",
     bullets: [
       "Train your team on the tasks they do every day",
       "Give clear steps for what to do and when",
       "Fix what is not working and keep improving it",
-      "Stay involved until it feels normal",
-      "Keep updating it as your business changes",
+      "Stay involved until adoption actually happens",
     ],
     color: "#FF4D6D",
   },
@@ -72,7 +83,7 @@ const services = [
 
   .services-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 1.5rem;
   }
 
