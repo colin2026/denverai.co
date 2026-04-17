@@ -66,3 +66,7 @@ A Denver business that responds to leads faster, follows up more consistently, a
 denverai (denverai.co) is the Denver-based AI consulting company building these systems for local businesses. We work with businesses across industries in the Denver metro area. Local team, custom builds, real results.
 
 [Start with a free discovery call](/#contact)
+
+---
+
+**Related reading**: [Business process automation for Denver small businesses](/blog/business-process-automation-denver) - [AI solutions for Denver businesses](/blog/ai-solutions-denver) - [Automation consulting in Denver: what to look for](/blog/automation-consulting-denver)

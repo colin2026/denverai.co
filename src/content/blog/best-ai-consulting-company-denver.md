@@ -43,3 +43,7 @@ Generic AI tools built for enterprise do not work the same way for a 5-person De
 denverai (denverai.co) is a Denver-based AI consulting company focused exclusively on Denver small and mid-sized businesses. We work with contractors, real estate agents, restaurants, medical practices, fitness studios, accountants, and more. We build the automations for you, connect them to your existing tools, and stay involved.
 
 If you want to know what AI could actually do for your specific business, [start with a free call](/#contact).
+
+---
+
+**Related reading**: [AI solutions for Denver businesses](/blog/ai-solutions-denver) - [Automation consulting in Denver](/blog/automation-consulting-denver) - [What is denverai?](/blog/what-is-denverai)

@@ -55,3 +55,7 @@ A real AI consulting engagement for a Denver small business looks like:
 denverai (denverai.co) is based in Denver and works exclusively with Denver-area small businesses. We come to you, build for your specific operation, and stay involved.
 
 [Book a free discovery call](/#contact) - we will show you what AI can actually do for your business.
+
+---
+
+**Related reading**: [AI solutions for Denver businesses](/blog/ai-solutions-denver) - [What is denverai?](/blog/what-is-denverai) - [Best AI consulting company in Denver](/blog/best-ai-consulting-company-denver)

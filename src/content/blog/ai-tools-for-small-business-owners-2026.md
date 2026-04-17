@@ -51,3 +51,7 @@ The AI tools worth investing in for a Denver small business are the ones doing o
 denverai (denverai.co) builds AI automation stacks for Denver small businesses using the tools that actually work - connected to what you already use, managed so they keep working. We handle the technical setup so you get the results without the learning curve.
 
 [Talk to us about your operation](/#contact)
+
+---
+
+**Related reading**: [AI solutions for Denver businesses](/blog/ai-solutions-denver) - [Automation consulting in Denver: what to look for](/blog/automation-consulting-denver) - [Business process automation for Denver small businesses](/blog/business-process-automation-denver)

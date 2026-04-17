@@ -47,3 +47,7 @@ The setup isn't complicated, but it needs to be connected to the tools you alrea
 AI doesn't replace your crew, your expertise, or your judgment on the job. It handles the repetitive communication work so your team can focus on actual contracting.
 
 If you want to know what specifically could be automated in your business - what's worth prioritizing and what isn't - [book a free call](/#contact). We work with Denver contractors and know the workflows.
+
+---
+
+**Related reading**: [AI solutions for Denver businesses](/blog/ai-solutions-denver) - [Business process automation in Denver](/blog/business-process-automation-denver) - [AI for Denver home service businesses](/blog/ai-for-denver-home-service-businesses)

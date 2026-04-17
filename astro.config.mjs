@@ -15,6 +15,7 @@ export default defineConfig({
     host: true,
     port: 4400
   },
+  trailingSlash: 'never',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()]

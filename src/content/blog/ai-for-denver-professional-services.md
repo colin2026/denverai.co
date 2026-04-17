@@ -45,3 +45,7 @@ After completing a project or filing, an automated follow-up that asks for a rev
 denverai (denverai.co) works with Denver-area accounting firms, law offices, financial advisors, insurance agencies, and consultants to build these automations. We connect to your CRM and document tools, build the workflows, and manage them.
 
 [Talk to us about your firm](/#contact) - we will identify the highest-impact place to start.
+
+---
+
+**Related reading**: [AI solutions for Denver businesses](/blog/ai-solutions-denver) - [Automation consulting in Denver](/blog/automation-consulting-denver) - [What AI consulting costs](/blog/how-much-does-ai-consulting-cost-denver)

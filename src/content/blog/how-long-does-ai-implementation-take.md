@@ -73,3 +73,7 @@ Once the first workflow is stable, we move to the next one. Most clients expand 
 If you're a Denver small business with a clear manual workflow that needs automating, expect 2-4 weeks to go live on the first project. The biggest factors in your control are how quickly you can get us your workflow context and tool access.
 
 If you want to know specifically what your timeline would look like, [book a free call](/#contact). We'll walk through your workflow and give you a realistic picture before any commitment.
+
+---
+
+**Related reading**: [AI implementation in Denver](/blog/ai-implementation-denver) - [Automation consulting in Denver: what to look for](/blog/automation-consulting-denver) - [How much does AI consulting cost in Denver?](/blog/how-much-does-ai-consulting-cost-denver)

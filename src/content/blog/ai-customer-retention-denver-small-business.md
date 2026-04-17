@@ -47,3 +47,7 @@ AI does not replace genuine customer relationships. The businesses with the best
 denverai (denverai.co) builds customer retention automations for Denver businesses across industries. We connect to your existing customer data, build the sequences, and manage them.
 
 [Start with a free call](/#contact) - we will show you how many customers you are leaving on the table.
+
+---
+
+**Related reading**: [AI for Denver restaurants](/blog/ai-for-denver-restaurants) - [AI solutions for Denver businesses](/blog/ai-solutions-denver) - [Managed AI services for Denver small businesses](/blog/managed-ai-services-denver-small-business)

@@ -80,3 +80,7 @@ All four of these connect to tools you probably already use - your CRM, scheduli
 You don't need new software. You need someone to build the workflows correctly and connect them to what you're already using.
 
 If you want a straight answer on which of these makes the most sense to start with for your specific business, [book a free call](/#contact). We'll map your current workflow and tell you exactly where to start.
+
+---
+
+**Related reading**: [Business process automation for Denver small businesses](/blog/business-process-automation-denver) - [AI solutions for Denver businesses](/blog/ai-solutions-denver) - [Automation consulting in Denver: what to look for](/blog/automation-consulting-denver)

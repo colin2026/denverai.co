@@ -83,3 +83,7 @@ Track one week of your own time and your team's time. Write down every task that
 That number is your automation ceiling - the maximum you could save if everything got automated perfectly. Reality will be lower, but it gives you a baseline for evaluating whether the investment makes sense.
 
 If you want to run through this exercise with someone who can tell you what's actually automatable and what isn't, [book a free call](/#contact). We do this with every Denver business we work with before recommending anything.
+
+---
+
+**Related reading**: [Business process automation for Denver small businesses](/blog/business-process-automation-denver) - [AI solutions for Denver businesses](/blog/ai-solutions-denver) - [Automation consulting in Denver: what to look for](/blog/automation-consulting-denver)

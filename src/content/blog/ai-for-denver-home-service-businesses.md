@@ -45,3 +45,7 @@ Denver's seasonal service businesses - landscaping, snow removal, irrigation - h
 denverai (denverai.co) works with Denver contractors and home service businesses to build these automations. We connect to your existing scheduling and CRM tools, build the workflows, and manage them. Local Denver team.
 
 [Start with a free call](/#contact) - tell us where you are losing time and we will show you what to automate.
+
+---
+
+**Related reading**: [AI solutions for Denver businesses](/blog/ai-solutions-denver) - [How long AI implementation takes](/blog/how-long-does-ai-implementation-take) - [Managed AI services for Denver](/blog/managed-ai-services-denver-small-business)

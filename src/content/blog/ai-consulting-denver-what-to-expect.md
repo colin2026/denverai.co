@@ -56,3 +56,7 @@ Remote consultants can build working software. Local consultants can build worki
 ---
 
 [Talk to us about what AI could do for your business.](/#contact) Free first call, no pitch deck.
+
+---
+
+**Related reading**: [Automation consulting in Denver: what to look for](/blog/automation-consulting-denver) - [How much does AI consulting cost in Denver?](/blog/how-much-does-ai-consulting-cost-denver) - [AI implementation in Denver](/blog/ai-implementation-denver)

@@ -398,11 +398,96 @@ const articleSchema = {
   }
 </style>
 
+<div class="sticky-cta" id="sticky-cta" aria-hidden="true">
+  <p class="sticky-cta-text">Want this built for your business?</p>
+  <a href="#post-cta-form" class="sticky-cta-btn">Get a free audit →</a>
+  <button class="sticky-cta-dismiss" id="sticky-dismiss" aria-label="Dismiss">✕</button>
+</div>
+
+<style>
+  .sticky-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #1C1C1E;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    padding: 0.9rem 1.5rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    z-index: 100;
+    flex-wrap: wrap;
+  }
+  .sticky-cta.visible { transform: translateY(0); }
+  .sticky-cta-text {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  .sticky-cta-btn {
+    background: #FF6B35;
+    color: #fff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.875rem;
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .sticky-cta-btn:hover { background: #e85a25; }
+  .sticky-cta-dismiss {
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.25rem;
+    line-height: 1;
+    position: absolute;
+    right: 1rem;
+  }
+  @media (max-width: 480px) {
+    .sticky-cta { justify-content: flex-start; padding-right: 3rem; }
+  }
+</style>
+
 <script>
   const form = document.getElementById('post-cta-form') as HTMLFormElement;
   const statusEl = document.getElementById('post-cta-status') as HTMLElement;
   const startedAtInput = form?.querySelector<HTMLInputElement>('input[name="form_started_at"]');
   if (startedAtInput) startedAtInput.value = String(Date.now());
+
+  // Sticky CTA logic
+  const stickyCta = document.getElementById('sticky-cta');
+  const dismissBtn = document.getElementById('sticky-dismiss');
+  if (stickyCta && !sessionStorage.getItem('sticky-dismissed')) {
+    const formEl = document.getElementById('post-cta-form');
+    const showThreshold = 0.4;
+    let shown = false;
+    const formObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) { stickyCta.classList.remove('visible'); }
+      else if (shown) { stickyCta.classList.add('visible'); }
+    }, { threshold: 0.1 });
+    if (formEl) formObserver.observe(formEl);
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+      if (scrolled > showThreshold && !shown) { shown = true; stickyCta.classList.add('visible'); stickyCta.removeAttribute('aria-hidden'); }
+    }, { passive: true });
+    dismissBtn?.addEventListener('click', () => {
+      stickyCta.classList.remove('visible');
+      sessionStorage.setItem('sticky-dismissed', '1');
+    });
+    stickyCta.querySelector('a')?.addEventListener('click', () => {
+      stickyCta.classList.remove('visible');
+    });
+  }
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();

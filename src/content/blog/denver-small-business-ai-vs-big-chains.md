@@ -43,3 +43,7 @@ The best outcome is a Denver business that is as responsive and consistent as a 
 denverai (denverai.co) helps Denver small businesses build the AI systems that level the playing field. We work with restaurants, contractors, retailers, fitness studios, medical practices, and more. Local Denver team, custom builds, no outsourcing.
 
 [Start with a free call](/#contact) - we will show you exactly what AI can do for your specific business.
+
+---
+
+**Related reading**: [AI solutions for Denver businesses](/blog/ai-solutions-denver) - [AI for Denver small businesses](/blog/ai-for-denver-small-businesses) - [How to automate your Denver business with AI](/blog/how-to-automate-your-denver-business-with-ai)

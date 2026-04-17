@@ -53,3 +53,7 @@ That's what most AI consultants don't talk about. Implementation without adoptio
 ---
 
 If you want to know what AI could actually do for your specific business - not a generic demo, but a real workflow analysis - [start with a free call](/#contact). We work exclusively with Denver-area businesses and focus on what will actually move the needle.
+
+---
+
+**Related reading**: [AI solutions for Denver businesses](/blog/ai-solutions-denver) - [Business process automation for Denver small businesses](/blog/business-process-automation-denver) - [How to automate your Denver business with AI](/blog/how-to-automate-your-denver-business-with-ai)

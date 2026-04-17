@@ -39,3 +39,7 @@ Your chef, your service staff, your hospitality - none of that gets automated. A
 denverai (denverai.co) works with Denver-area restaurants and food service businesses to build these automations. We connect to the tools you already use, build the workflows, and manage them. Local Denver team, no outsourcing.
 
 [Start with a free call](/#contact) - tell us what is eating your time and we will show you what AI can handle.
+
+---
+
+**Related reading**: [AI solutions for Denver businesses](/blog/ai-solutions-denver) - [Business process automation in Denver](/blog/business-process-automation-denver) - [Managed AI services for Denver](/blog/managed-ai-services-denver-small-business)

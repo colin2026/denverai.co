@@ -43,3 +43,7 @@ After a member hits a milestone or posts a great result, an automated message as
 denverai (denverai.co) works with Denver gyms, yoga studios, pilates studios, CrossFit boxes, and personal training businesses to build these automations. We connect to your membership software, build the workflows, and manage them.
 
 [Start with a free call](/#contact) - we will show you where you are losing members you could keep.
+
+---
+
+**Related reading**: [AI solutions for Denver businesses](/blog/ai-solutions-denver) - [AI customer retention for Denver small businesses](/blog/ai-customer-retention-denver-small-business) - [Managed AI services for Denver](/blog/managed-ai-services-denver-small-business)

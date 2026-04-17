@@ -39,3 +39,7 @@ Everyone who signs in at an open house should get a follow-up within 24 hours. M
 denverai (denverai.co) works with Denver-area real estate agents and brokerages to build lead follow-up automations, past client campaigns, and listing alert sequences. We connect to your CRM or contact list, build the workflows, and manage them.
 
 [Talk to us about your pipeline](/#contact) - we will map out what to automate first.
+
+---
+
+**Related reading**: [AI solutions for Denver businesses](/blog/ai-solutions-denver) - [Automation consulting in Denver](/blog/automation-consulting-denver) - [What AI consulting costs](/blog/how-much-does-ai-consulting-cost-denver)

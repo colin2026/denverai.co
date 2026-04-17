@@ -76,3 +76,7 @@ Whether you work with denverai or someone else, these are the things that matter
 - Can they show you examples of what they've built, not just what they've sold?
 
 If you want a straight answer on what AI implementation would look like for your specific business, [book a free call](/#contact). We'll map your workflow and tell you exactly what makes sense to automate first.
+
+---
+
+**Related reading**: [How long AI implementation takes](/blog/how-long-does-ai-implementation-take) - [What AI consulting costs in Denver](/blog/how-much-does-ai-consulting-cost-denver) - [Managed AI services for Denver](/blog/managed-ai-services-denver-small-business)

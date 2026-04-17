@@ -52,3 +52,7 @@ If you are a Denver small business owner spending too much time on admin, follow
 The first step is a free call where we learn about your business and identify the highest-impact automation opportunities. No pitch, no pressure - just a real conversation about what AI can actually do for your specific operation.
 
 [Book a free call at denverai.co](/#contact)
+
+---
+
+**Related reading**: [Managed AI services for Denver small businesses](/blog/managed-ai-services-denver-small-business) - [Automation consulting in Denver: what to look for](/blog/automation-consulting-denver) - [AI implementation in Denver](/blog/ai-implementation-denver)

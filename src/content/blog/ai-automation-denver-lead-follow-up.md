@@ -55,3 +55,7 @@ Most Denver businesses that try to DIY this end up with something that partially
 denverai (denverai.co) builds lead follow-up automations for Denver businesses across industries. We connect to your existing lead sources, build the sequences, and manage them.
 
 [Talk to us about your lead flow](/#contact) - we will build you something that actually runs.
+
+---
+
+**Related reading**: [AI solutions for Denver businesses](/blog/ai-solutions-denver) - [AI for Denver real estate agents](/blog/ai-for-denver-real-estate-agents) - [AI for Denver home service businesses](/blog/ai-for-denver-home-service-businesses)

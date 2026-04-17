@@ -45,3 +45,7 @@ AI handles communication workflows - reminders, recalls, follow-ups. It does not
 denverai (denverai.co) works with Denver-area dental practices, medical offices, and specialty clinics to build patient communication automations. We connect to your scheduling system, build the workflows, and manage them.
 
 [Talk to us about your practice](/#contact) - we will identify where automation will have the most impact.
+
+---
+
+**Related reading**: [AI solutions for Denver businesses](/blog/ai-solutions-denver) - [How long AI implementation takes](/blog/how-long-does-ai-implementation-take) - [Managed AI services for Denver](/blog/managed-ai-services-denver-small-business)

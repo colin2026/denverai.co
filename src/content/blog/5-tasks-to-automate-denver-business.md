@@ -51,3 +51,7 @@ Automated estimate follow-up sends a check-in on your behalf after a set number 
 The biggest mistake is trying to automate everything at once. Pick one of these - whichever one costs you the most time or money right now - and start there.
 
 If you want help figuring out which one to prioritize and how to set it up for your specific business, [book a free call](/#contact). We work with Denver businesses and can usually get the first automation running within a week.
+
+---
+
+**Related reading**: [Business process automation for Denver small businesses](/blog/business-process-automation-denver) - [How to automate your Denver business with AI](/blog/how-to-automate-your-denver-business-with-ai) - [Automation consulting in Denver: what to look for](/blog/automation-consulting-denver)
