@@ -91,6 +91,24 @@ const articleSchema = {
         <Content />
       </div>
 
+      <div class="post-cta">
+        <div class="post-cta-text">
+          <p class="post-cta-heading">Want this built for your business?</p>
+          <p class="post-cta-sub">Denver-based. Free 30-min call. No pitch deck.</p>
+        </div>
+        <form class="post-cta-form" id="post-cta-form">
+          <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;pointer-events:none;" />
+          <input type="hidden" name="form_started_at" value="" />
+          <input type="hidden" name="source" value={`/blog/${post.slug}`} />
+          <div class="post-cta-fields">
+            <input type="text" name="name" placeholder="Your name" required />
+            <input type="email" name="email" placeholder="Work email" required />
+            <button type="submit">Book a free call</button>
+          </div>
+          <p class="post-cta-status" id="post-cta-status" style="display:none;"></p>
+        </form>
+      </div>
+
       {relatedPosts.length > 0 && (
         <nav class="related-posts">
           <h2>Keep reading</h2>
@@ -106,11 +124,6 @@ const articleSchema = {
           </ul>
         </nav>
       )}
-
-      <div class="post-cta">
-        <p>Ready to put AI to work in your business?</p>
-        <a href="/#contact" class="cta-btn">Book a free call</a>
-      </div>
     </div>
   </article>
 </Layout>
@@ -294,50 +307,144 @@ const articleSchema = {
   /* CTA */
   .post-cta {
     margin-top: 3rem;
-    padding: 2rem;
+    padding: 2rem 2.25rem;
     background: #FAE3D5;
-    border-radius: 12px;
+    border-radius: 14px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.5rem;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 1.25rem;
   }
 
-  .post-cta p {
+  .post-cta-heading {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
+    font-weight: 800;
+    font-size: 1.15rem;
     color: #1C1C1E;
     margin: 0;
   }
 
-  .cta-btn {
-    display: inline-block;
+  .post-cta-sub {
+    font-size: 0.875rem;
+    color: #666;
+    margin: 0.25rem 0 0;
+  }
+
+  .post-cta-fields {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+
+  .post-cta-fields input {
+    flex: 1;
+    min-width: 140px;
+    padding: 0.65rem 1rem;
+    border: 1.5px solid rgba(28,28,30,0.15);
+    border-radius: 8px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.9rem;
+    color: #1C1C1E;
+    background: #fff;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .post-cta-fields input:focus {
+    border-color: #FF6B35;
+  }
+
+  .post-cta-fields input::placeholder {
+    color: #aaa;
+  }
+
+  .post-cta-fields button {
     background: #FF6B35;
     color: #fff;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 0.9rem;
-    padding: 0.6rem 1.4rem;
-    border-radius: 50px;
-    text-decoration: none;
+    padding: 0.65rem 1.4rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
     white-space: nowrap;
     transition: background 0.2s;
   }
 
-  .cta-btn:hover {
+  .post-cta-fields button:hover {
     background: #e85a25;
   }
+
+  .post-cta-status {
+    font-size: 0.875rem;
+    margin: 0;
+  }
+
+  .post-cta-status.success { color: #2a7a2a; }
+  .post-cta-status.error { color: #c0392b; }
 
   @media (max-width: 600px) {
     .post-header h1 {
       font-size: 1.75rem;
     }
 
-    .post-cta {
+    .post-cta-fields {
       flex-direction: column;
-      align-items: flex-start;
+    }
+
+    .post-cta-fields button {
+      width: 100%;
     }
   }
 </style>
+
+<script>
+  const form = document.getElementById('post-cta-form') as HTMLFormElement;
+  const statusEl = document.getElementById('post-cta-status') as HTMLElement;
+  const startedAtInput = form?.querySelector<HTMLInputElement>('input[name="form_started_at"]');
+  if (startedAtInput) startedAtInput.value = String(Date.now());
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button') as HTMLButtonElement;
+    if (btn.disabled) return;
+
+    const data = new FormData(form);
+    const name = data.get('name') as string;
+    const email = data.get('email') as string;
+    const source = data.get('source') as string;
+    const honeypot = (data.get('website') as string)?.trim();
+    const elapsed = startedAtInput ? Date.now() - Number(startedAtInput.value) : 9999;
+
+    if (honeypot || elapsed < 1200) {
+      statusEl.textContent = "Got it - we'll be in touch shortly.";
+      statusEl.className = 'post-cta-status success';
+      statusEl.style.display = 'block';
+      form.reset();
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    try {
+      const res = await fetch('https://ntfy.sh/aidenver-contact', {
+        method: 'POST',
+        headers: { 'Title': 'New Denver AI Lead (blog)' },
+        body: `Name: ${name}\nEmail: ${email}\nSource: ${source}`,
+      });
+      if (!res.ok) throw new Error();
+      statusEl.textContent = "Got it - we'll be in touch shortly.";
+      statusEl.className = 'post-cta-status success';
+      statusEl.style.display = 'block';
+      form.reset();
+      btn.textContent = 'Sent ✓';
+    } catch {
+      statusEl.textContent = 'Something went wrong - try again or email us directly.';
+      statusEl.className = 'post-cta-status error';
+      statusEl.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Book a free call';
+    }
+  });
+</script>
