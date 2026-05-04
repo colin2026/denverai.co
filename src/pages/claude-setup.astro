@@ -1,0 +1,352 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Claude Setup for Denver Businesses | DenverAI"
+  description="We configure Claude for your Denver business - set up your workspace, build templates for your daily tasks, and train your team so they actually use it."
+  canonicalPath="/claude-setup"
+>
+  <Nav />
+
+  <section class="claude-hero">
+    <div class="inner">
+      <div class="badge">Claude Setup</div>
+      <h1>Claude is the most capable AI out there.<br /><span class="highlight">Most businesses don't know how to use it.</span></h1>
+      <p class="sub">You bought Claude. You tried it for a few days. Now it's sitting in a tab you never open. We fix that - configuring it for your specific business so it's actually useful every day.</p>
+      <a href="#contact" class="btn-primary">Get Claude set up</a>
+    </div>
+  </section>
+
+  <section class="claude-problem">
+    <div class="inner">
+      <div class="col">
+        <h2>What most businesses do</h2>
+        <ul class="bad-list">
+          <li>Ask it to write a generic email</li>
+          <li>Get a generic answer, feel underwhelmed</li>
+          <li>Use it like a slower Google</li>
+          <li>Stop using it after a week</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h2>What a configured Claude does</h2>
+        <ul class="good-list">
+          <li>Writes in your voice, for your customers</li>
+          <li>Knows your services, pricing, and FAQs</li>
+          <li>Handles your most repetitive daily tasks</li>
+          <li>Gets used by your whole team, every day</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="claude-what">
+    <div class="inner">
+      <h2>What we set up</h2>
+      <div class="cards">
+        <div class="card">
+          <span class="card-num">01</span>
+          <h3>Your business context</h3>
+          <p>We build a Claude workspace loaded with your business - your services, your tone, your customers, your FAQs. Every response Claude gives reflects how your business actually works.</p>
+        </div>
+        <div class="card">
+          <span class="card-num">02</span>
+          <h3>Templates for daily tasks</h3>
+          <p>We identify the 5-10 things your team does manually every week and build Claude templates for each one - customer replies, proposals, social posts, summaries, whatever you're spending time on.</p>
+        </div>
+        <div class="card">
+          <span class="card-num">03</span>
+          <h3>Tool connections</h3>
+          <p>Where it makes sense, we connect Claude to the tools you already use - your inbox, your scheduling software, your project tracker. Less copy-paste, more done.</p>
+        </div>
+        <div class="card">
+          <span class="card-num">04</span>
+          <h3>Team training</h3>
+          <p>We walk your team through every template live. Not a video, not documentation - a working session where they use it on real tasks while we're there to answer questions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="claude-who">
+    <div class="inner">
+      <h2>Good fit for</h2>
+      <div class="who-list">
+        <div class="who-item">
+          <span class="who-label">Restaurants and cafes</span>
+          <p>Menu copy, customer replies, social captions, staff communications.</p>
+        </div>
+        <div class="who-item">
+          <span class="who-label">Service businesses</span>
+          <p>Proposals, follow-ups, job descriptions, client FAQs.</p>
+        </div>
+        <div class="who-item">
+          <span class="who-label">Medical and dental offices</span>
+          <p>Patient communications, appointment reminders, intake summaries.</p>
+        </div>
+        <div class="who-item">
+          <span class="who-label">Contractors and home services</span>
+          <p>Estimates, job updates, review responses, vendor emails.</p>
+        </div>
+        <div class="who-item">
+          <span class="who-label">Retail and e-commerce</span>
+          <p>Product descriptions, customer service replies, promotions.</p>
+        </div>
+        <div class="who-item">
+          <span class="who-label">Professional services</span>
+          <p>Client reports, proposals, research summaries, meeting notes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Contact />
+  <Footer />
+</Layout>
+
+<style>
+  .claude-hero {
+    padding: 8rem 2rem 5rem;
+    background: #FAE3D5;
+  }
+
+  .claude-hero .inner {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .badge {
+    display: inline-block;
+    background: rgba(124, 58, 237, 0.1);
+    color: #7C3AED;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(124, 58, 237, 0.2);
+  }
+
+  h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: #1C1C1E;
+    margin: 0 0 1.5rem;
+  }
+
+  .highlight {
+    color: #7C3AED;
+  }
+
+  .sub {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #555;
+    max-width: 600px;
+    margin: 0 0 2rem;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: #7C3AED;
+    color: #fff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover {
+    background: #6D28D9;
+    transform: translateY(-2px);
+  }
+
+  /* Problem section */
+  .claude-problem {
+    padding: 5rem 2rem;
+    background: #fff;
+  }
+
+  .claude-problem .inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .col h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1C1C1E;
+    margin: 0 0 1.25rem;
+  }
+
+  .bad-list, .good-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .bad-list li, .good-list li {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #555;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .bad-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: #ccc;
+  }
+
+  .good-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #7C3AED;
+    font-size: 0.8rem;
+    top: 0.1em;
+  }
+
+  /* What we set up */
+  .claude-what {
+    padding: 5rem 2rem;
+    background: #F5F5F3;
+  }
+
+  .claude-what .inner {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .claude-what h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 800;
+    color: #1C1C1E;
+    margin: 0 0 2.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid #E8E8E5;
+  }
+
+  .card-num {
+    display: block;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #7C3AED;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+  }
+
+  .card h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1C1C1E;
+    margin: 0 0 0.6rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+  }
+
+  /* Who it's for */
+  .claude-who {
+    padding: 5rem 2rem;
+    background: #fff;
+  }
+
+  .claude-who .inner {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .claude-who h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 800;
+    color: #1C1C1E;
+    margin: 0 0 2.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .who-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .who-item {
+    padding: 1.5rem;
+    border: 1px solid #E8E8E5;
+    border-radius: 12px;
+  }
+
+  .who-label {
+    display: block;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1C1C1E;
+    margin-bottom: 0.5rem;
+  }
+
+  .who-item p {
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: #777;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .claude-problem .inner {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .cards {
+      grid-template-columns: 1fr;
+    }
+
+    .who-list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
