@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/blog/:path*/", "destination": "/blog/:path*", "permanent": true },
+    { "source": "/:path((?!api/).)*", "has": [{ "type": "host", "value": "www.denverai.co" }], "destination": "https://denverai.co/:path*", "permanent": true }
+  ]
+}
